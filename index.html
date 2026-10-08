@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CyberShield | Security Awareness</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+<aside class="sidebar">
+  <div class="brand">🛡 <b>Cyber<span>Shield</span></b><small>Security Awareness</small></div>
+  <button class="nav active" data-page="dashboard">▦ Dashboard</button>
+  <button class="nav" data-page="campaigns">◉ Simulations</button>
+  <button class="nav" data-page="employees">♙ Employees</button>
+  <button class="nav" data-page="training">✓ Training</button>
+  <button class="nav" data-page="reports">◫ Reports</button>
+  <button class="nav" data-page="settings">⚙ Settings</button>
+  <div class="safe-note">● Demo environment<br><small>No real emails are sent</small></div>
+</aside>
+
+<main>
+<header class="topbar"><div>Security Awareness / <b id="pageTitle">Dashboard</b></div><div>⌕　♢　 <b>Security Admin</b></div></header>
+
+<section id="dashboard" class="page active">
+<div class="head"><div><label>OVERVIEW</label><h1>Security command center</h1><p>Monitor simulated phishing risk and employee awareness.</p></div><button class="primary" id="quickCampaign">＋ New Simulation</button></div>
+<div class="notice">🛡 <div><b>Safe simulation mode</b><p>Scenarios run only inside this browser. No credentials or real phishing messages are used.</p></div></div>
+<div class="stats">
+<div><small>Employees tested</small><strong id="tested">128</strong><i>↑ 12%</i><p>vs previous campaign</p></div>
+<div><small>At-risk employees</small><strong id="atRisk">23</strong><i>↓ 8%</i><p>after training</p></div>
+<div><small>Report rate</small><strong>68%</strong><i>↑ 14%</i><p>employees reported simulations</p></div>
+<div><small>Organization risk</small><strong id="riskScore">72<em>/100</em></strong><div class="meter"><span id="riskBar"></span></div><p>High risk</p></div>
+</div>
+<div class="two">
+<div class="card"><h2>Campaign performance</h2><p class="muted">Last six simulations</p><div class="chart"><b style="height:35%">May</b><b style="height:50%">Jun</b><b style="height:43%">Jul</b><b style="height:63%">Aug</b><b style="height:54%">Sep</b><b class="now" style="height:32%">Oct</b></div></div>
+<div class="card"><h2>Risk by department</h2><p class="muted">Simulated click rate</p>
+<div class="riskrow">Payroll <b>42%</b><span><i style="width:42%"></i></span></div>
+<div class="riskrow">Finance <b>28%</b><span><i style="width:28%"></i></span></div>
+<div class="riskrow">Developers <b>21%</b><span><i style="width:21%"></i></span></div>
+<div class="riskrow">HR <b>12%</b><span><i style="width:12%"></i></span></div>
+</div></div>
+<div class="card"><h2>Recent activity</h2><div id="activity"></div></div>
+</section>
+
+<section id="campaigns" class="page">
+<div class="head"><div><label>SIMULATIONS</label><h1>Phishing simulations</h1><p>Create role-based, safe awareness scenarios.</p></div></div>
+<div class="two">
+<div class="card"><h2>Scenario library</h2>
+<button class="scenario selected" data-role="Payroll">💰 <b>Payroll update</b><small>Salary / benefits notification · Medium</small></button>
+<button class="scenario" data-role="Developer">⌘ <b>Developer security alert</b><small>Code repository notification · Hard</small></button>
+<button class="scenario" data-role="HR">♙ <b>Benefits enrollment</b><small>Employee benefits reminder · Easy</small></button>
+<button class="scenario" data-role="Finance">₹ <b>Invoice review</b><small>Payment notification · Medium</small></button>
+</div>
+<div class="card"><h2>Mock employee inbox <span class="safe">SAFE MODE</span></h2>
+<div class="email"><small>Inbox / Simulation</small><hr><b id="sender">payroll@company-demo</b><p id="subject">Salary revision notification</p><p id="mailText">Your salary information has been updated. Review the notification to see the latest changes.</p>
+<button id="simulateClick" class="mailbtn">Review notification</button><small>⚠ CyberShield simulation — no external page opens</small></div></div></div>
+<div class="card launch"><h2>Run this simulation</h2><select><option>Payroll team</option><option>Developers</option><option>Finance team</option><option>All employees</option></select><select><option>Medium</option><option>Easy</option><option>Hard</option></select><button class="primary" id="runSimulation">Launch Safe Simulation</button></div>
+</section>
+
+<section id="employees" class="page"><div class="head"><div><label>PEOPLE</label><h1>Employee risk</h1><p>Identify employees who need targeted training.</p></div></div>
+<div class="card table"><table><thead><tr><th>Employee</th><th>Department</th><th>Result</th><th>Risk</th><th>Training</th></tr></thead><tbody id="employeeRows"></tbody></table></div></section>
+
+<section id="training" class="page"><div class="head"><div><label>LEARNING CENTER</label><h1>Security training</h1><p>Strengthen behaviors exposed by simulations.</p></div></div>
+<div class="courses"><div class="card course"><span>🛡</span><h2>Phishing Fundamentals</h2><p>Learn sender verification, suspicious links and safe reporting.</p><button class="primary" id="startTraining">Start Training</button></div>
+<div class="card course"><span>⌘</span><h2>Developer Security</h2><p>Recognize fake repository alerts and token requests.</p><button class="secondary" id="devTraining">Assign Course</button></div>
+<div class="card course"><span>₹</span><h2>Finance & Payroll Safety</h2><p>Practice spotting invoice and salary social engineering.</p><button class="secondary">Assign Course</button></div></div>
+<div class="card"><h2>Training completion · 91%</h2><div class="bigmeter"><i style="width:91%"></i></div></div></section>
+
+<section id="reports" class="page"><div class="head"><div><label>INSIGHTS</label><h1>Security reports</h1><p>Turn simulation results into measurable risk reduction.</p></div></div>
+<div class="report card"><div><h2>Organization risk score</h2><p>Risk improves after targeted awareness training.</p></div><strong id="reportScore">72<small>/100</small></strong></div>
+<div class="two"><div class="card"><h2>Key metrics</h2><p>Simulation click rate <b>18%</b></p><p>Reporting rate <b>68%</b></p><p>Training completion <b>91%</b></p><p>Repeat offenders <b>7</b></p></div>
+<div class="card"><h2>Recommended action</h2><p>Payroll has the highest simulated click rate at 42%.</p><button class="text" data-page="training">Open training →</button></div></div></section>
+
+<section id="settings" class="page"><div class="head"><div><label>SYSTEM</label><h1>Settings</h1><p>Configure the safe demo environment.</p></div></div><div class="card settings"><label>Organization name<input value="CyberShield Demo"></label><label>Simulation mode<select><option>Safe browser simulation</option></select></label><label>Automatic training <input type="checkbox" checked></label><div class="notice">✓ Safety controls enabled. No real messages or passwords are processed.</div></div></section>
+</main></div>
+
+<div class="modal" id="modal"><div class="modalbox"><button id="close">×</button><div class="check">✓</div><h2>Simulation recorded</h2><p id="modalText">The simulated interaction was safely recorded.</p><div class="result">Risk status <b>Training required</b></div><button class="primary full" id="modalTraining">Assign & Complete Training</button></div></div>
+<div id="toast"></div>
+<script src="app.js"></script>
+</body></html>
